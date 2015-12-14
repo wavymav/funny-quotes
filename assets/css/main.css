@@ -669,6 +669,18 @@ th {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     background: #ff5a1d; }
 
+@media (max-width: 600px) {
+  .button-cta {
+    font-size: 24px; } }
+
+@media (max-width: 500px) {
+  .button-cta {
+    font-size: 20px; } }
+
+@media (max-width: 400px) {
+  .button-cta {
+    font-size: 18px; } }
+
 body {
   font-family: sans-serif; }
 
@@ -692,3 +704,31 @@ h1 {
   font-weight: 300;
   text-align: center;
   height: 150px; }
+
+@media (max-width: 965px) {
+  .quote {
+    font-size: 28px;
+    padding: 0 10px; } }
+
+@media (max-width: 700px) {
+  .quote {
+    font-size: 24px;
+    padding: 10px 10px 0; } }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 64px; }
+  .quote {
+    font-size: 22px; } }
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px; }
+  .quote {
+    font-size: 18px; } }
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 44px; }
+  .quote {
+    font-size: 15px; } }
