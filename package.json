@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/wavymav/funny-quotes/issues"
   },
-  "homepage": "https://github.com/wavymav/funny-quotes#readme"
+  "homepage": "https://github.com/wavymav/funny-quotes#readme",
+  "devDependencies": {
+    "gulp-autoprefixer": "3.1.0"
+  }
 }
