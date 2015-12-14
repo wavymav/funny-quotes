@@ -1,6 +1,7 @@
 import React from 'react';
 import QuoteButton from './QuoteButton';
 import Quote from './Quote';
+import quotes from 'quotrr'
 
 export default class App extends React.Component {
   constructor() {
@@ -16,17 +17,21 @@ export default class App extends React.Component {
 
   componentDidMount(){
     this.setState({
-      buttonText: 'View Quote',
-      quoteInfo: {
-       author: 'Bob Monkhouse',
-       quote: 'When I die, I want to go peacefully like my grandfather did–in his sleep. Not yelling and screaming like the passengers in his car.'
-     }
+      buttonText: 'View Quote'
     })
   }
 
   handleButtonClick() {
+    const quoteObj = quotes.randomQuote();
+    var author = quoteObj.author.replace(/\n/gi,"");
+    var quote = quoteObj.quote;
+
     this.setState({
-      buttonText: 'View Another Quote'
+      buttonText: 'View Another Quote',
+      quoteInfo: {
+       author: author,
+       quote: quote
+     }
     })
   }
 

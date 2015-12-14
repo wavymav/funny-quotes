@@ -19,6 +19,7 @@
     "gulp": "3.9.0",
     "gulp-jade": "1.1.0",
     "gulp-sass": "2.1.0",
+    "quotrr": "1.1.0",
     "react": "0.14.3",
     "react-dom": "0.14.3"
   },
