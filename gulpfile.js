@@ -34,8 +34,9 @@ gulp.task('sass', () => {
     return gulp.src('assets/css/main.scss')
       .pipe(sass())
       .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-      .pipe(gulp.dest('assets/css'))
+      .pipe(gulp.dest('public/assets/css'))
       .pipe(browserSync.stream())
+      .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('default', ['serve']);
