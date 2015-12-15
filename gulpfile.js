@@ -3,6 +3,7 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const jade = require('gulp-jade');
 const autoprefixer = require('gulp-autoprefixer');
+const ghPages = require('gulp-gh-pages');
 
 /**
  * Static Server + watching scss/html files
@@ -37,6 +38,11 @@ gulp.task('sass', () => {
       .pipe(gulp.dest('public/assets/css'))
       .pipe(browserSync.stream())
       .pipe(gulp.dest('assets/css'));
+});
+
+gulp.task('deploy', () => {
+  return gulp.src('./public/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['serve']);
