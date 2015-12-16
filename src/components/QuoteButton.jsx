@@ -1,13 +1,14 @@
 import React from 'react';
 
 export default class QuoteButton extends React.Component {
-  handleClick() {
-    this.props.showQuote();
-  }
-
   render() {
     return (
-      <a className="button-cta" onClick={this.handleClick.bind(this)}>{this.props.text}</a>
+      <a className="button-cta" onClick={this.props.showQuote}>{this.props.text}</a>
     );
   }
+}
+
+QuoteButton.propTypes = {
+  text: React.PropTypes.string.isRequired,
+  showQuote: React.PropTypes.func.isRequired
 }

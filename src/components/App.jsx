@@ -21,10 +21,10 @@ export default class App extends React.Component {
     })
   }
 
-  handleButtonClick() {
+  showQuote() {
     const quoteObj = quotes.randomQuote();
-    var author = quoteObj.author.replace(/\n/gi,"");
-    var quote = quoteObj.quote;
+    const author = quoteObj.author.replace(/\n/gi,"");
+    const quote = quoteObj.quote;
 
     this.setState({
       buttonText: 'View Another Quote',
@@ -45,7 +45,7 @@ export default class App extends React.Component {
           <div className="col col--6-of-12 col--centered button-center">
             <QuoteButton
               text={this.state.buttonText}
-              showQuote={this.handleButtonClick.bind(this)} />
+              showQuote={this.showQuote.bind(this)} />
           </div>
           <div className="col col--2-of-2">
             <Quote

@@ -10,3 +10,8 @@ export default class Quote extends React.Component {
     );
   }
 }
+
+Quote.propTypes = {
+  quoteText: React.PropTypes.string.isRequired,
+  quoteAuthor: React.PropTypes.string.isRequired
+}
