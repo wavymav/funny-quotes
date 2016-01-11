@@ -1,6 +1,6 @@
 import React from 'react';
-import QuoteButton from './QuoteButton';
-import Quote from './Quote';
+import { QuoteButton } from './QuoteButton';
+import { Quote } from './Quote';
 import quotes from 'quotrr'
 
 export default class App extends React.Component {
@@ -13,12 +13,11 @@ export default class App extends React.Component {
         quote: ''
       }
     }
+    this.showQuote = this.showQuote.bind(this)
   }
 
   componentDidMount(){
-    this.setState({
-      buttonText: 'View Quote'
-    })
+    this.setState({ buttonText: 'View Quote' })
   }
 
   showQuote() {
@@ -29,13 +28,19 @@ export default class App extends React.Component {
     this.setState({
       buttonText: 'View Another Quote',
       quoteInfo: {
-       author: author,
-       quote: quote
+       author,
+       quote
      }
     })
   }
 
   render() {
+    const {
+      buttonText,
+      quoteText,
+      quoteInfo
+    } = this.state
+    
     return (
       <div className="container">
         <div className="row">
@@ -44,13 +49,13 @@ export default class App extends React.Component {
           </div>
           <div className="col col--6-of-12 col--centered button-center">
             <QuoteButton
-              text={this.state.buttonText}
-              showQuote={this.showQuote.bind(this)} />
+              text={ buttonText }
+              showQuote={ this.showQuote } />
           </div>
           <div className="col col--2-of-2">
             <Quote
-              quoteText={this.state.quoteInfo.quote}
-              quoteAuthor={this.state.quoteInfo.author} />
+              quoteText={ quoteInfo.quote }
+              quoteAuthor={ quoteInfo.author } />
           </div>
         </div>
       </div>
