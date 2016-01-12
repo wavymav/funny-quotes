@@ -1,6 +1,5 @@
 import React from 'react';
-import { QuoteButton } from './QuoteButton';
-import { Quote } from './Quote';
+import { Quote, QuoteButton  } from './components';
 import quotes from 'quotrr'
 
 export default class App extends React.Component {
@@ -40,7 +39,7 @@ export default class App extends React.Component {
       quoteText,
       quoteInfo
     } = this.state
-    
+
     return (
       <div className="container">
         <div className="row">
