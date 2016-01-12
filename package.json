@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --progress --colors",
-    "test": "mocha './src/test/**/*.spec.js' --compilers js:babel-core/register --recursive",
+    "test": "mocha './src/**/*.spec.js' --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch"
   },
   "repository": {

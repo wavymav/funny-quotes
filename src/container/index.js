@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component }from 'react';
 import { Quote, QuoteButton  } from './components';
 import quotes from 'quotrr'
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,14 +12,14 @@ export default class App extends React.Component {
         quote: ''
       }
     }
-    this.showQuote = this.showQuote.bind(this)
+    this.onHandleClick = this.onHandleClick.bind(this)
   }
 
   componentDidMount(){
     this.setState({ buttonText: 'View Quote' })
   }
 
-  showQuote() {
+  onHandleClick() {
     const quoteObj = quotes.randomQuote();
     const author = quoteObj.author.replace(/\n/gi,"");
     const quote = quoteObj.quote;
@@ -49,7 +49,7 @@ export default class App extends React.Component {
           <div className="col col--6-of-12 col--centered button-center">
             <QuoteButton
               text={ buttonText }
-              showQuote={ this.showQuote } />
+              showQuote={ this.onHandleClick } />
           </div>
           <div className="col col--2-of-2">
             <Quote
